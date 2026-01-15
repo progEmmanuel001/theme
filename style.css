@@ -1,0 +1,65 @@
+/* Hide radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Default theme (Light) */
+.page {
+  --bg: #ffffff;
+  --text: #222;
+  --primary: #4f46e5;
+}
+
+/* Dark Theme */
+#dark:checked ~ .page {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --primary: #38bdf8;
+}
+
+/* Custom Theme */
+#custom:checked ~ .page {
+  --bg: #fff7ed;
+  --text: #7c2d12;
+  --primary: #ea580c;
+}
+
+/* Apply variables */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.page {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.controls label {
+  background: #ddd;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 0.3rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
